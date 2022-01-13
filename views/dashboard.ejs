@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <!--Totally optional :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"
+        integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+<body class="bg-gray-800 font-sans leading-normal tracking-normal mt-12">
+
+    <!--Nav-->
+    <nav class="bg-gray-800 pt-2 md:pt-1 pb-1 px-1 mt-0 h-auto fixed w-full z-20 top-0">
+
+        <div class="flex flex-wrap items-center">
+            <div class="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
+                <a href="#">
+                    <span class="text-xl pl-2"><i class="em em-grinning"></i></span>
+                </a>
+            </div>
+
+            <div class="flex w-full pt-2 content-center justify-between md:w-1/3 md:justify-end">
+                <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+                    <li class="flex-1 md:flex-none md:mr-3">
+                        <div class="relative inline-block">
+                            <button onclick="toggleDD('myDropdown')" class="drop-button text-white focus:outline-none">
+                                <span class="pr-2"><i class="em em-robot_face"></i></span> Hi, User <svg
+                                    class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg></button>
+                            <div id="myDropdown"
+                                class="dropdownlist absolute bg-gray-800 text-white right-0 mt-3 p-3 overflow-auto z-30 invisible">
+                                <input type="text" class="drop-search p-2 text-gray-600" placeholder="Search.."
+                                    id="myInput" onkeyup="filterDD('myDropdown','myInput')">
+                                <a href="#"
+                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
+                                        class="fa fa-user fa-fw"></i> Profile</a>
+                                <a href="#"
+                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
+                                        class="fa fa-cog fa-fw"></i> Settings</a>
+                                <div class="border border-gray-800"></div>
+                                <a href="http://localhost:8080"
+                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
+                                        class="fas fa-sign-out-alt fa-fw"></i> Log Out</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex flex-col md:flex-row">
+        <div class="bg-gray-800 shadow-xl h-16 fixed bottom-0 mt-12 md:relative md:h-screen z-10 w-full md:w-48">
+            <div
+                class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
+                <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
+                    <div class="panel">
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test" class="close">&times;</a>
+                            <h3 class="panel-title">Meteo</h3>
+                        </div></div>
+                </ul>
+                <div class="panel">
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test1" class="close">&times;</a>
+                            <h3 class="panel-title">Map</h3>
+                        </div></div>
+                        </ul>
+                        <div class="panel">
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test2" class="close">&times;</a>
+                            <h3 class="panel-title">Bourse</h3>
+                        </div></div>
+                    </ul>
+                    <div class="panel">
+                    <div class="panel-heading"><a data-toggle="collapse" href="#test3" class="close">&times;</a>
+                        <h3 class="panel-title">Crypto</h3>
+                    </div></div>
+                </ul>
+                <div class="panel">
+                <div class="panel-heading"><a data-toggle="collapse" href="#test4" class="close">&times;</a>
+                    <h3 class="panel-title">RedditTech</h3>
+                </div></div>
+            </ul>
+            <div class="panel">
+            <div class="panel-heading"><a data-toggle="collapse" href="#test5" class="close">&times;</a>
+                <h3 class="panel-title">Calendar</h3>
+            </div></div>
+            </ul>
+            <div class="panel">
+            <div class="panel-heading"><a data-toggle="collapse" href="#test6" class="close">&times;</a>
+                <h3 class="panel-title">Time</h3>
+            </div></div>
+            </div>
+        </div>
+
+        <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
+            <div class="bg-gray-800 pt-3">
+                <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
+                    <h3 class="font-bold pl-2">Dashboard</h3>
+                </div>
+            </div>
+            <style>#mydiv {
+                position: absolute;
+                transform: translate(0px, 770px);
+                z-index: 9;
+                background-color: #f1f1f1;
+                border: 1px solid #d3d3d3;
+                text-align: center;
+                width: 300px;
+              }
+              
+              #mydivheader {
+                padding: 10px;
+                cursor: move;
+                z-index: 10;
+                background-color: #2196F3;
+                color: #fff;
+              }</style>
+              <style>#mydiv2 {
+                position: absolute;
+                transform: translate(350px,600px);
+                z-index: 9;
+                background-color: #f1f1f1;
+                border: 1px solid #d3d3d3;
+                text-align: center;
+                width: 400px;
+              }
+              
+              #mydivheader2 {
+                padding: 10px;
+                cursor: move;
+                z-index: 10;
+                background-color: #2196F3;
+                color: #fff;
+              }</style>
+              <style>#mydiv3 {
+                position: absolute;
+                transform: translate(250px,1400px);
+                z-index: 9;
+                background-color: #f1f1f1;
+                border: 1px solid #d3d3d3;
+                text-align: center;
+                width: 450px;
+              }
+              
+              #mydivheader3 {
+                padding: 10px;
+                cursor: move;
+                z-index: 10;
+                background-color: #2196F3;
+                color: #fff;
+              }</style>
+                            <style>#mydivMAP {
+                                position: absolute;
+                                transform: translate(100px, 0px);
+                                z-index: 9;
+                                background-color: #f1f1f1;
+                                border: 1px solid #d3d3d3;
+                                text-align: center;
+                                width: 610px;
+                              }
+                              
+                              #mydivMAPheader {
+                                padding: 10px;
+                                cursor: move;
+                                z-index: 10;
+                                background-color: #2196F3;
+                                color: #fff;
+                              }</style>
+              <style>#mydiv4 {
+                position: absolute;
+                transform: translate(300px,600px);
+                z-index: 9;
+                background-color: #f1f1f1;
+                border: 1px solid #d3d3d3;
+                text-align: center;
+                width: 350px;
+              }
+              
+              #mydivheader4 {
+                padding: 10px;
+                cursor: move;
+                z-index: 10;
+                background-color: #2196F3;
+                color: #fff;
+              }</style>
+              <style>#mydiv5 {
+                position: absolute;
+                transform: translate(0px, 150px);
+                z-index: 9;
+                background-color: #f1f1f1;
+                border: 1px solid #d3d3d3;
+                text-align: center;
+                width: 320px;
+              }
+              
+              #mydiv5header {
+                padding: 10px;
+                cursor: move;
+                z-index: 10;
+                background-color: #2196F3;
+                color: #fff;
+              }</style>
+              <style>#mydiv6 {
+                position: absolute;
+                transform: translate(-230px, -60px);
+                z-index: 9;
+                background-color: #f1f1f1;
+                border: 1px solid #d3d3d3;
+                text-align: center;
+                width: 320px;
+              }
+              
+              #mydiv6header {
+                padding: 10px;
+                cursor: move;
+                z-index: 10;
+                background-color: #2196F3;
+                color: #fff;
+              }</style>
+              
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-2 xl:w-1/3 p-6">
+                    <!-- METEO -->
+                    <div id="mydiv">
+                        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                        <div id="mydivheader">Move Meteo</div>
+                    <div class="panel panel-primary fade in collapse" id="test">
+                        <div class="container"></div>
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test" class="close">&times;</a>
+                            <h3 class="panel-title">Meteo</h3>
+                        </div>
+                        <a href="http://www.accuweather.com/en/il/hod-hasharon/212527/current-weather/212527"
+                            class="aw-widget-legal">
+                            <!--
+                        By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
+                        -->
+                        </a>
+                        <div id="awtd1399327708942" class="aw-widget-36hour" data-locationkey="" data-unit="c"
+                            data-language="fr" data-useip="true" data-uid="awtd1399327708942" data-editlocation="true">
+                        </div>
+                        <script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+                    </div>
+                </div>
+                </div>
+                
+                <!--/Metric Card-->
+                <div class="w-full md:w-1/2 xl:w-2/3 p-6">
+                    <!--Metric Card-->
+                    <!--MAP-->
+                    <div id="mydivMAP">
+                        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                        <div id="mydivMAPheader">Move Map</div>
+                    <div class="panel panel-primary fade in collapse" id="test1">
+                        <div class="container"></div>
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test1" class="close">&times;</a>
+                            <h3 class="panel-title">Map</h3>
+                        </div>
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                        <body>
+                            <form role="search" id="form">
+                                <input type="search" id="query" name="q" placeholder="Search..."
+                                    aria-label="Search through site content">
+                                <button>
+                                    <svg viewBox="0 0 1024 1024">
+                                        <path class="path1"
+                                            d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </form>
+                        </body>
+                            <div class="mapouter">
+                                <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
+                                        src="https://maps.google.com/maps?q=Melbourne&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                        href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon/"></a><br>
+                                    <style>
+                                        .mapouter {
+                                            position: relative;
+                                            text-align: right;
+                                            height: 500px;
+                                            width: 600px;
+                                        }
+                                    </style><a href="https://www.embedgooglemap.net">interactive maps for websites
+                                        free</a>
+                                    <style>
+                                        .gmap_canvas {
+                                            overflow: hidden;
+                                            background: none !important;
+                                            height: 500px;
+                                            width: 600px;
+                                        }
+                                    </style>
+                                </div>
+                            </div>
+                            <script>
+                                //Modify the src attribute of the image with the ID "myImage"
+                                const f = document.getElementById('form');
+                                const q = document.getElementById('query');
+                                const google = 'https://maps.google.com/maps?q=';
+                                const site = '&t=&z=13&ie=UTF8&iwloc=&output=embed';
+
+                                function submitted(event) {
+                                    event.preventDefault();
+                                    var url = google + q.value + site;
+                                    document.getElementById("gmap_canvas").src = url;
+                                    win.focus();
+                                }
+
+                                f.addEventListener('submit', submitted);
+                            </script>
+                    </div>
+                </div></div>
+
+
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="w-full md:w-2 xl:w-1/3 p-6">
+                    <div id="mydiv2">
+                        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                        <div id="mydivheader2">Move Bourse</div>
+                    <div class="panel panel-primary fade in collapse" id="test2">
+                        <div class="container"></div>
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test2" class="close">&times;</a>
+                            <h3 class="panel-title">Bourse</h3>
+                        </div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <div class="tradingview-widget-copyright"><a href="https://fr.tradingview.com/markets/"
+                                rel="noopener" target="_blank"><span class="blue-text">Marchés financiers</span></a> par
+                            TradingView</div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "colorTheme": "dark",
+                                        "dateRange": "12M",
+                                            "showChart": true,
+                                                "locale": "fr",
+                                                    "largeChartUrl": "",
+                                                        "isTransparent": false,
+                                                            "showSymbolLogo": true,
+                                                                "showFloatingTooltip": false,
+                                                                    "width": "400",
+                                                                        "height": "660",
+                                                                            "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
+                                                                                "plotLineColorFalling": "rgba(41, 98, 255, 1)",
+                                                                                    "gridLineColor": "rgba(240, 243, 250, 0)",
+                                                                                        "scaleFontColor": "rgba(120, 123, 134, 1)",
+                                                                                            "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
+                                                                                                "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
+                                                                                                    "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
+                                                                                                        "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
+                                                                                                            "symbolActiveColor": "rgba(41, 98, 255, 0.12)",
+                                                                                                                "tabs": [
+                                                                                                                    {
+                                                                                                                        "title": "Indices",
+                                                                                                                        "symbols": [
+                                                                                                                            {
+                                                                                                                                "s": "FOREXCOM:SPXUSD",
+                                                                                                                                "d": "S&P 500"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "FOREXCOM:NSXUSD",
+                                                                                                                                "d": "US 100"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "FOREXCOM:DJI",
+                                                                                                                                "d": "Dow 30"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "INDEX:NKY",
+                                                                                                                                "d": "Nikkei 225"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "INDEX:DEU40",
+                                                                                                                                "d": "DAX Index"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "FOREXCOM:UKXGBP",
+                                                                                                                                "d": "UK 100"
+                                                                                                                            }
+                                                                                                                        ],
+                                                                                                                        "originalTitle": "Indices"
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "title": "Contrats à terme",
+                                                                                                                        "symbols": [
+                                                                                                                            {
+                                                                                                                                "s": "CME_MINI:ES1!",
+                                                                                                                                "d": "S&P 500"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "CME:6E1!",
+                                                                                                                                "d": "Euro"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "COMEX:GC1!",
+                                                                                                                                "d": "Gold"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "NYMEX:CL1!",
+                                                                                                                                "d": "Crude Oil"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "NYMEX:NG1!",
+                                                                                                                                "d": "Natural Gas"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "CBOT:ZC1!",
+                                                                                                                                "d": "Corn"
+                                                                                                                            }
+                                                                                                                        ],
+                                                                                                                        "originalTitle": "Futures"
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "title": "Obligations",
+                                                                                                                        "symbols": [
+                                                                                                                            {
+                                                                                                                                "s": "CME:GE1!",
+                                                                                                                                "d": "Eurodollar"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "CBOT:ZB1!",
+                                                                                                                                "d": "T-Bond"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "CBOT:UB1!",
+                                                                                                                                "d": "Ultra T-Bond"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "EUREX:FGBL1!",
+                                                                                                                                "d": "Euro Bund"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "EUREX:FBTP1!",
+                                                                                                                                "d": "Euro BTP"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "EUREX:FGBM1!",
+                                                                                                                                "d": "Euro BOBL"
+                                                                                                                            }
+                                                                                                                        ],
+                                                                                                                        "originalTitle": "Bonds"
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "title": "Forex",
+                                                                                                                        "symbols": [
+                                                                                                                            {
+                                                                                                                                "s": "FX:EURUSD"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "FX:GBPUSD"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "FX:USDJPY"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "FX:USDCHF"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "FX:AUDUSD"
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                                "s": "FX:USDCAD"
+                                                                                                                            }
+                                                                                                                        ],
+                                                                                                                        "originalTitle": "Forex"
+                                                                                                                    }
+                                                                                                                ]
+                                }
+                            </script>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <!-- TradingView Widget END -->
+
+
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="w-full md:w-2 xl:w-1/3 p-6">
+                        <div id="mydiv3">
+                            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                            <div id="mydivheader3">Move Crypto</div>
+                    <div class="panel panel-primary fade in collapse" id="test3">
+                        <div class="container"></div>
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test3" class="close">&times;</a>
+                            <h3 class="panel-title">Crypto</h3>
+                        </div>
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript"
+                            src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                {
+                                    "title_raw": "Cryptocurrencies",
+                                        "belowLineFillColorGrowing": "rgba(60, 188, 152, 0.05)",
+                                            "gridLineColor": "rgba(233, 233, 234, 1)",
+                                                "scaleFontColor": "rgba(218, 221, 224, 1)",
+                                                    "title": "Cryptocurrencies",
+                                                        "tabs": [
+                                                            {
+                                                                "title_raw": "Overview",
+                                                                "symbols": [
+                                                                    {
+                                                                        "s": "BITFINEX:BTCUSD"
+                                                                    },
+                                                                    {
+                                                                        "s": "BITFINEX:ETHUSD"
+                                                                    },
+                                                                    {
+                                                                        "s": "COINBASE:DOGEUSD"
+                                                                    },
+                                                                    {
+                                                                        "s": "COINBASE:BCHUSD"
+                                                                    },
+                                                                    {
+                                                                        "s": "COINBASE:LTCUSD"
+                                                                    }
+                                                                ],
+                                                                "title": "Overview"
+                                                            },
+                                                            {
+                                                                "title_raw": "Bitcoin",
+                                                                "symbols": [
+                                                                    {
+                                                                        "s": "BITFINEX:BTCUSD"
+                                                                    },
+                                                                    {
+                                                                        "s": "COINBASE:BTCEUR"
+                                                                    },
+                                                                    {
+                                                                        "s": "COINBASE:BTCGBP"
+                                                                    },
+                                                                    {
+                                                                        "s": "BITFLYER:BTCJPY"
+                                                                    },
+                                                                    {
+                                                                        "s": "WEX:BTCRUR"
+                                                                    },
+                                                                    {
+                                                                        "s": "CME:BTC1!"
+                                                                    }
+                                                                ],
+                                                                "title": "Bitcoin"
+                                                            },
+                                                            {
+                                                                "title_raw": "Ripple",
+                                                                "symbols": [
+                                                                    {
+                                                                        "s": "BITFINEX:XRPUSD"
+                                                                    },
+                                                                    {
+                                                                        "s": "KRAKEN:XRPEUR"
+                                                                    },
+                                                                    {
+                                                                        "s": "KORBIT:XRPKRW"
+                                                                    },
+                                                                    {
+                                                                        "s": "BITSO:XRPMXN"
+                                                                    },
+                                                                    {
+                                                                        "s": "BINANCE:XRPBTC"
+                                                                    },
+                                                                    {
+                                                                        "s": "BITTREX:XRPETH"
+                                                                    }
+                                                                ],
+                                                                "title": "Ripple"
+                                                            },
+                                                            {
+                                                                "title_raw": "Ethereum",
+                                                                "symbols": [
+                                                                    {
+                                                                        "s": "COINBASE:ETHUSD"
+                                                                    },
+                                                                    {
+                                                                        "s": "KRAKEN:ETHEUR"
+                                                                    },
+                                                                    {
+                                                                        "s": "KRAKEN:ETHGBP"
+                                                                    },
+                                                                    {
+                                                                        "s": "KRAKEN:ETHJPY"
+                                                                    },
+                                                                    {
+                                                                        "s": "POLONIEX:ETHBTC"
+                                                                    },
+                                                                    {
+                                                                        "s": "WEX:ETHLTC"
+                                                                    }
+                                                                ],
+                                                                "title": "Ethereum"
+                                                            },
+                                                            {
+                                                                "title_raw": "Bitcoin Cash",
+                                                                "symbols": [
+                                                                    {
+                                                                        "s": "COINBASE:BCHUSD"
+                                                                    },
+                                                                    {
+                                                                        "s": "BITSTAMP:BCHEUR"
+                                                                    },
+                                                                    {
+                                                                        "s": "CEXIO:BCHGBP"
+                                                                    },
+                                                                    {
+                                                                        "s": "POLONIEX:BCHBTC"
+                                                                    },
+                                                                    {
+                                                                        "s": "HITBTC:BCHETH"
+                                                                    },
+                                                                    {
+                                                                        "s": "WEX:BCHLTC"
+                                                                    }
+                                                                ],
+                                                                "title": "Bitcoin Cash"
+                                                            }
+                                                        ],
+                                                            "plotLineColorFalling": "rgba(255, 74, 104, 1)",
+                                                                "plotLineColorGrowing": "rgba(60, 188, 152, 1)",
+                                                                    "showChart": true,
+                                                                        "title_link": "/markets/cryptocurrencies/prices-all/",
+                                                                            "locale": "en",
+                                                                                "symbolActiveColor": "rgba(242, 250, 254, 1)",
+                                                                                    "belowLineFillColorFalling": "rgba(255, 74, 104, 0.05)",
+                                                                                        "height": 660,
+                                                                                            "width": 400
+                                }
+                            </script>
+                    </div>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2 xl:w-1/3 p-6">
+                        <div id="mydiv4">
+                            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                            <div id="mydivheader4">Move RedditTech</div>
+                    <div class="panel panel-primary fade in collapse" id="test4">
+                        <div class="container"></div>
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test4" class="close">&times;</a>
+                            <h3 class="panel-title">RedditTech</h3>
+                        </div>
+                    <script src='//redditjs.com/subreddit.js' data-subreddit='aww' data-height='400' data-width='330' data-sort='hot' data-theme='dark' data-subreddit-mode='small' ></script>
+                    </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2 xl:w-1/3 p-6">
+                        <div id="mydiv5">
+                            <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                            <div id="mydiv5header">Move Calendar</div>
+                    <div class="panel panel-primary fade in collapse" id="test5">
+                        <div class="container"></div>
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test5" class="close">&times;</a>
+                            <h3 class="panel-title">Calendar</h3>
+                        </div>
+                        <style>
+                            * {
+                              margin: 0;  padding: 0;}
+                            
+                            body {
+                              height: 100vh;  background: #ddd;  display: flex;  justify-content: center;
+                              align-items: center;  font-family: "Quicksand", sans-serif;  user-select: none;
+                            }
+                            
+                            .softcard {  width: 316px;  height: fit-content;
+                              background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+                              background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                              border-radius: 20px;  box-shadow: 0px 0px 10px #000;
+                            }
+                            
+                            .calendar-bar {  display: flex;  justify-content: space-between;
+                              align-items: center;  padding: 20px;  padding-bottom: 15px;
+                              border-bottom: 19px;
+                            }
+                            
+                            .calendar-bar > .current-month {
+                              font-size: 20px;  font-weight: bold;  color: #ddd;
+                              background:#000;  padding:5px;  border-radius:10px;
+                            }
+                            
+                            .calendar-bar > [class$="soft-btn"] {
+                              width: 40px;  aspect-ratio: 1;  text-align: center;
+                              line-height: 40px;  font-size: 14px;  color: #000;
+                              background: #ddd;  border: none;  border-radius: 50%;
+                            }
+                            .weekdays-name,
+.calendar-days {  display: flex;  flex-wrap: wrap;  padding-inline:18px;}
+.weekdays-name {  padding-top: 12px;}
+
+.calendar-days {  padding-bottom: 12px;}
+
+.days-name,
+[class$="-day"] {  width: 40px;  height: 40px;  color: #000;  text-align: center;
+  line-height: 40px;  font-weight: 500;  font-size: 1rem;
+}
+
+.days-name {  color: #fff;  font-weight: 700;}
+
+.current-day {
+  background-color: #000;  color: #fff;
+  border-radius: 50%;  font-weight: 700;  transition: 0.5s;  cursor: pointer;
+}
+
+.padding-day {
+  color: #a5a5a5;  user-select: none;
+}
+
+.calendar-bar > [class$="soft-btn"]:hover,
+.month-day:hover,
+.btn:hover {
+  border-radius:5px;  background-color:#f8f7fa;  color:#000;  border-radius:15px;
+  transition: 0.1s;  cursor: pointer;
+
+}
+.calendar-bar > [class$="soft-btn"]:focus,
+.month-day:focus,
+.btn:focus {  border-radius:15px;  background-color: #000;  color: #ddd;
+}
+
+.goto-buttons {
+  border-top: solid 2px yellow;  padding-block: 18px;  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  background: #eee  border: none;  border-radius: 10px;
+  padding: 11px 13px;  color:#000;  font-family: "Quicksand", sans-serif;
+  font-weight: 600;  font-size: 0.9rem;  margin-right: 1px;  box-shadow: 0px 0px 0px #000;
+}
+
+</style>
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+<div class="softcard">
+  <div class="calendar-bar">
+    <button class="prev soft-btn"><i class="fas fa-chevron-left"></i></button>
+    <div class="current-month"></div>
+    <button class="next soft-btn"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="calendar">
+    <div class="weekdays-name">
+      <div class="days-name">Sa</div>
+      <div class="days-name">Su</div>
+      <div class="days-name">Mo</div>
+      <div class="days-name">Tu</div>
+      <div class="days-name">We</div>
+      <div class="days-name">Th</div>
+      <div class="days-name">Fr</div>
+    </div>
+    <div class="calendar-days"></div>
+  </div>
+  <div class="goto-buttons">
+    <button type="button" class="btn prev-year">Prev Year</button>
+    <button type="button" class="btn today">Today</button>
+    <button type="button" class="btn next-year">Next Year</button>
+  </div>
+</div>
+                    </div>
+                        </div>
+<script>
+var currentMonth = document.querySelector(".current-month");
+var calendarDays = document.querySelector(".calendar-days");
+var today = new Date();
+var date = new Date();
+currentMonth.textContent = date.toLocaleDateString("en-US", {month:'long', year:'numeric'});
+today.setHours(0,0,0,0);
+renderCalendar();
+function renderCalendar(){
+    const prevLastDay = new Date(date.getFullYear(),date.getMonth(),0).getDate();
+    const totalMonthDay = new Date(date.getFullYear(),date.getMonth()+1,0).getDate();
+    const startWeekDay = new Date(date.getFullYear(),date.getMonth(),1).getDay();
+    calendarDays.innerHTML = "";
+    let totalCalendarDay = 6 * 7;
+    for (let i = 0; i < totalCalendarDay; i++) {
+        let day = i-startWeekDay;
+        if(i <= startWeekDay){
+            // adding previous month days
+            calendarDays.innerHTML += `<div class='padding-day'>${prevLastDay-i}</div>`;
+        }else if(i <= startWeekDay+totalMonthDay){
+            // adding this month days
+            date.setDate(day);
+            date.setHours(0,0,0,0);           
+            let dayClass = date.getTime()===today.getTime() ? 'current-day' : 'month-day';
+            calendarDays.innerHTML += `<div class='${dayClass}'>${day}</div>`;
+        }else{
+            // adding next month days
+            calendarDays.innerHTML += `<div class='padding-day'>${day-totalMonthDay}</div>`;
+        }    }}
+        document.querySelectorAll(".soft-btn").forEach(function (element) {
+    element.addEventListener("click", function () {
+        date = new Date(currentMonth.textContent);
+        date.setMonth(date.getMonth() + (element.classList.contains("prev") ? -1 : 1));
+        currentMonth.textContent = date.toLocaleDateString("en-US", {month:'long', year:'numeric'});
+        renderCalendar();
+    });});
+document.querySelectorAll(".btn").forEach(function (element) {
+    element.addEventListener("click", function () {
+        let btnClass = element.classList;
+        date = new Date(currentMonth.textContent);
+        if(btnClass.contains("today"))
+            date = new Date();
+        else if(btnClass.contains("prev-year"))
+            date = new Date(date.getFullYear()-1, 0, 1);
+        else
+            date = new Date(date.getFullYear()+1, 0, 1);
+        currentMonth.textContent = date.toLocaleDateString("en-US", {month:'long', year:'numeric'});
+        renderCalendar();
+    });
+});
+        </script>
+                    </div>
+                    <!-- END OF CALENDAR -->
+                <!-- TIME -->
+                <div class="w-full md:w-2 xl:w-1/3 p-6">
+                    <div id="mydiv6">
+                        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+                        <div id="mydiv6header">Move Time</div>
+                    <div class="panel panel-primary fade in collapse" id="test6">
+                        <div class="container"></div>
+                        <div class="panel-heading"><a data-toggle="collapse" href="#test6" class="close">&times;</a>
+                            <h3 class="panel-title">Time</h3>
+                        </div>
+                    <span id=ct>Timezone here </span><br>
+                    <span id=ct2>Hour Minutes Sec here </span><br>
+                    <input type=button value='Show' onClick=disp_TZ()>
+                    <form name=f1>
+                    <select name=tz onChange=disp_TZ()>
+                    </select>
+                    </form>
+                    <script>
+function disp_TZ(){
+//tz='Africa/Accra'
+tz=f1.tz.options[f1.tz.options.selectedIndex].value  
+str=new Date().toLocaleString("en-NZ",
+{timeZone:tz,timeZoneName:"short"})
+document.getElementById('ct').innerHTML=str + " , "+tz  
+// showing hour minutes and seconds ///
+dt2 = new Date();
+str2 = new Date(dt2.toLocaleString('en-US',{
+timeZone: tz}));
+diff=dt2.getTime()-str2.getTime();	
+dt3=new Date(dt2.getTime()-diff);
+hour=dt3.getHours();
+minute=dt3.getMinutes();
+seconds=dt3.getSeconds();
+str3= hour + ':' + minute + ':' + seconds 
+document.getElementById('ct2').innerHTML= str3
+////  end of hour minutes and seconds ///
+display_c()
+}
+function display_c(){
+refresh=1000
+mytime=setTimeout('disp_TZ()',refresh)
+}
+var my_timezones=[
+'Africa/Abidjan',
+'Africa/Accra',
+'Africa/Addis_Ababa',
+'Africa/Algiers',
+'Africa/Asmara',
+'Africa/Bamako',
+'Africa/Bangui',
+'Africa/Banjul',
+'Africa/Bissau',
+'Africa/Blantyre',
+'Africa/Brazzaville',
+'Africa/Bujumbura',
+'Africa/Cairo',
+'Africa/Casablanca',
+'Africa/Ceuta',
+'Africa/Conakry',
+'Africa/Dakar',
+'Africa/Dar_es_Salaam',
+'Africa/Djibouti',
+'Africa/Douala',
+'Africa/El_Aaiun',
+'Africa/Freetown',
+'Africa/Gaborone',
+'Africa/Harare',
+'Africa/Johannesburg',
+'Africa/Juba',
+'Africa/Kampala',
+'Africa/Khartoum',
+'Africa/Kigali',
+'Africa/Kinshasa',
+'Africa/Lagos',
+'Africa/Libreville',
+'Africa/Lome',
+'Africa/Luanda',
+'Africa/Lubumbashi',
+'Africa/Lusaka',
+'Africa/Malabo',
+'Africa/Maputo',
+'Africa/Maseru',
+'Africa/Mbabane',
+'Africa/Mogadishu',
+'Africa/Monrovia',
+'Africa/Nairobi',
+'Africa/Ndjamena',
+'Africa/Niamey',
+'Africa/Nouakchott',
+'Africa/Ouagadougou',
+'Africa/Porto-Novo',
+'Africa/Sao_Tome',
+'Africa/Tripoli',
+'Africa/Tunis',
+'Africa/Windhoek',
+'America/Adak',
+'America/Anchorage',
+'America/Anguilla',
+'America/Antigua',
+'America/Araguaina',
+'America/Argentina/Buenos_Aires',
+'America/Argentina/Catamarca',
+'America/Argentina/Cordoba',
+'America/Argentina/Jujuy',
+'America/Argentina/La_Rioja',
+'America/Argentina/Mendoza',
+'America/Argentina/Rio_Gallegos',
+'America/Argentina/Salta',
+'America/Argentina/San_Juan',
+'America/Argentina/San_Luis',
+'America/Argentina/Tucuman',
+'America/Argentina/Ushuaia',
+'America/Aruba',
+'America/Asuncion',
+'America/Atikokan',
+'America/Bahia',
+'America/Bahia_Banderas',
+'America/Barbados',
+'America/Belem',
+'America/Belize',
+'America/Blanc-Sablon',
+'America/Boa_Vista',
+'America/Bogota',
+'America/Boise',
+'America/Cambridge_Bay',
+'America/Campo_Grande',
+'America/Cancun',
+'America/Caracas',
+'America/Cayenne',
+'America/Cayman',
+'America/Chicago',
+'America/Chihuahua',
+'America/Costa_Rica',
+'America/Creston',
+'America/Cuiaba',
+'America/Curacao',
+'America/Danmarkshavn',
+'America/Dawson',
+'America/Dawson_Creek',
+'America/Denver',
+'America/Detroit',
+'America/Dominica',
+'America/Edmonton',
+'America/Eirunepe',
+'America/El_Salvador',
+'America/Fort_Nelson',
+'America/Fortaleza',
+'America/Glace_Bay',
+'America/Godthab',
+'America/Goose_Bay',
+'America/Grand_Turk',
+'America/Grenada',
+'America/Guadeloupe',
+'America/Guatemala',
+'America/Guayaquil',
+'America/Guyana',
+'America/Halifax',
+'America/Havana',
+'America/Hermosillo',
+'America/Indiana/Indianapolis',
+'America/Indiana/Knox',
+'America/Indiana/Marengo',
+'America/Indiana/Petersburg',
+'America/Indiana/Tell_City',
+'America/Indiana/Vevay',
+'America/Indiana/Vincennes',
+'America/Indiana/Winamac',
+'America/Inuvik',
+'America/Iqaluit',
+'America/Jamaica',
+'America/Juneau',
+'America/Kentucky/Louisville',
+'America/Kentucky/Monticello',
+'America/Kralendijk',
+'America/La_Paz',
+'America/Lima',
+'America/Los_Angeles',
+'America/Lower_Princes',
+'America/Maceio',
+'America/Managua',
+'America/Manaus',
+'America/Marigot',
+'America/Martinique',
+'America/Matamoros',
+'America/Mazatlan',
+'America/Menominee',
+'America/Merida',
+'America/Metlakatla',
+'America/Mexico_City',
+'America/Miquelon',
+'America/Moncton',
+'America/Monterrey',
+'America/Montevideo',
+'America/Montserrat',
+'America/Nassau',
+'America/New_York',
+'America/Nipigon',
+'America/Nome',
+'America/Noronha',
+'America/North_Dakota/Beulah',
+'America/North_Dakota/Center',
+'America/North_Dakota/New_Salem',
+'America/Ojinaga',
+'America/Panama',
+'America/Pangnirtung',
+'America/Paramaribo',
+'America/Phoenix',
+'America/Port-au-Prince',
+'America/Port_of_Spain',
+'America/Porto_Velho',
+'America/Puerto_Rico',
+'America/Rainy_River',
+'America/Rankin_Inlet',
+'America/Recife',
+'America/Regina',
+'America/Resolute',
+'America/Rio_Branco',
+'America/Santa_Isabel',
+'America/Santarem',
+'America/Santiago',
+'America/Santo_Domingo',
+'America/Sao_Paulo',
+'America/Scoresbysund',
+'America/Sitka',
+'America/St_Barthelemy',
+'America/St_Johns',
+'America/St_Kitts',
+'America/St_Lucia',
+'America/St_Thomas',
+'America/St_Vincent',
+'America/Swift_Current',
+'America/Tegucigalpa',
+'America/Thule',
+'America/Thunder_Bay',
+'America/Tijuana',
+'America/Toronto',
+'America/Tortola',
+'America/Vancouver',
+'America/Whitehorse',
+'America/Winnipeg',
+'America/Yakutat',
+'America/Yellowknife',
+'Antarctica/Casey',
+'Antarctica/Davis',
+'Antarctica/DumontDUrville',
+'Antarctica/Macquarie',
+'Antarctica/Mawson',
+'Antarctica/McMurdo',
+'Antarctica/Palmer',
+'Antarctica/Rothera',
+'Antarctica/Syowa',
+'Antarctica/Troll',
+'Antarctica/Vostok',
+'Arctic/Longyearbyen',
+'Asia/Aden',
+'Asia/Almaty',
+'Asia/Amman',
+'Asia/Anadyr',
+'Asia/Aqtau',
+'Asia/Aqtobe',
+'Asia/Ashgabat',
+'Asia/Baghdad',
+'Asia/Bahrain',
+'Asia/Baku',
+'Asia/Bangkok',
+'Asia/Beirut',
+'Asia/Bishkek',
+'Asia/Brunei',
+'Asia/Chita',
+'Asia/Choibalsan',
+'Asia/Colombo',
+'Asia/Damascus',
+'Asia/Dhaka',
+'Asia/Dili',
+'Asia/Dubai',
+'Asia/Dushanbe',
+'Asia/Gaza',
+'Asia/Hebron',
+'Asia/Ho_Chi_Minh',
+'Asia/Hong_Kong',
+'Asia/Hovd',
+'Asia/Irkutsk',
+'Asia/Jakarta',
+'Asia/Jayapura',
+'Asia/Jerusalem',
+'Asia/Kabul',
+'Asia/Kamchatka',
+'Asia/Karachi',
+'Asia/Kathmandu',
+'Asia/Khandyga',
+'Asia/Kolkata',
+'Asia/Krasnoyarsk',
+'Asia/Kuala_Lumpur',
+'Asia/Kuching',
+'Asia/Kuwait',
+'Asia/Macau',
+'Asia/Magadan',
+'Asia/Makassar',
+'Asia/Manila',
+'Asia/Muscat',
+'Asia/Nicosia',
+'Asia/Novokuznetsk',
+'Asia/Novosibirsk',
+'Asia/Omsk',
+'Asia/Oral',
+'Asia/Phnom_Penh',
+'Asia/Pontianak',
+'Asia/Pyongyang',
+'Asia/Qatar',
+'Asia/Qyzylorda',
+'Asia/Rangoon',
+'Asia/Riyadh',
+'Asia/Sakhalin',
+'Asia/Samarkand',
+'Asia/Seoul',
+'Asia/Shanghai',
+'Asia/Singapore',
+'Asia/Srednekolymsk',
+'Asia/Taipei',
+'Asia/Tashkent',
+'Asia/Tbilisi',
+'Asia/Tehran',
+'Asia/Thimphu',
+'Asia/Tokyo',
+'Asia/Ulaanbaatar',
+'Asia/Urumqi',
+'Asia/Ust-Nera',
+'Asia/Vientiane',
+'Asia/Vladivostok',
+'Asia/Yakutsk',
+'Asia/Yekaterinburg',
+'Asia/Yerevan',
+'Atlantic/Azores',
+'Atlantic/Bermuda',
+'Atlantic/Canary',
+'Atlantic/Cape_Verde',
+'Atlantic/Faroe',
+'Atlantic/Madeira',
+'Atlantic/Reykjavik',
+'Atlantic/South_Georgia',
+'Atlantic/St_Helena',
+'Atlantic/Stanley',
+'Australia/Adelaide',
+'Australia/Brisbane',
+'Australia/Broken_Hill',
+'Australia/Currie',
+'Australia/Darwin',
+'Australia/Eucla',
+'Australia/Hobart',
+'Australia/Lindeman',
+'Australia/Lord_Howe',
+'Australia/Melbourne',
+'Australia/Perth',
+'Australia/Sydney',
+'Europe/Amsterdam',
+'Europe/Andorra',
+'Europe/Athens',
+'Europe/Belgrade',
+'Europe/Berlin',
+'Europe/Bratislava',
+'Europe/Brussels',
+'Europe/Bucharest',
+'Europe/Budapest',
+'Europe/Busingen',
+'Europe/Chisinau',
+'Europe/Copenhagen',
+'Europe/Dublin',
+'Europe/Gibraltar',
+'Europe/Guernsey',
+'Europe/Helsinki',
+'Europe/Isle_of_Man',
+'Europe/Istanbul',
+'Europe/Jersey',
+'Europe/Kaliningrad',
+'Europe/Kiev',
+'Europe/Lisbon',
+'Europe/Ljubljana',
+'Europe/London',
+'Europe/Luxembourg',
+'Europe/Madrid',
+'Europe/Malta',
+'Europe/Mariehamn',
+'Europe/Minsk',
+'Europe/Monaco',
+'Europe/Moscow',
+'Europe/Oslo',
+'Europe/Paris',
+'Europe/Podgorica',
+'Europe/Prague',
+'Europe/Riga',
+'Europe/Rome',
+'Europe/Samara',
+'Europe/San_Marino',
+'Europe/Sarajevo',
+'Europe/Simferopol',
+'Europe/Skopje',
+'Europe/Sofia',
+'Europe/Stockholm',
+'Europe/Tallinn',
+'Europe/Tirane',
+'Europe/Uzhgorod',
+'Europe/Vaduz',
+'Europe/Vatican',
+'Europe/Vienna',
+'Europe/Vilnius',
+'Europe/Volgograd',
+'Europe/Warsaw',
+'Europe/Zagreb',
+'Europe/Zaporozhye',
+'Europe/Zurich',
+'Indian/Antananarivo',
+'Indian/Chagos',
+'Indian/Christmas',
+'Indian/Cocos',
+'Indian/Comoro',
+'Indian/Kerguelen',
+'Indian/Mahe',
+'Indian/Maldives',
+'Indian/Mauritius',
+'Indian/Mayotte',
+'Indian/Reunion',
+'Pacific/Apia',
+'Pacific/Auckland',
+'Pacific/Bougainville',
+'Pacific/Chatham',
+'Pacific/Chuuk',
+'Pacific/Easter',
+'Pacific/Efate',
+'Pacific/Enderbury',
+'Pacific/Fakaofo',
+'Pacific/Fiji',
+'Pacific/Funafuti',
+'Pacific/Galapagos',
+'Pacific/Gambier',
+'Pacific/Guadalcanal',
+'Pacific/Guam',
+'Pacific/Honolulu',
+'Pacific/Johnston',
+'Pacific/Kiritimati',
+'Pacific/Kosrae',
+'Pacific/Kwajalein',
+'Pacific/Majuro',
+'Pacific/Marquesas',
+'Pacific/Midway',
+'Pacific/Nauru',
+'Pacific/Niue',
+'Pacific/Norfolk',
+'Pacific/Noumea',
+'Pacific/Pago_Pago',
+'Pacific/Palau',
+'Pacific/Pitcairn',
+'Pacific/Pohnpei',
+'Pacific/Port_Moresby',
+'Pacific/Rarotonga',
+'Pacific/Saipan',
+'Pacific/Tahiti',
+'Pacific/Tarawa',
+'Pacific/Tongatapu',
+'Pacific/Wake',
+'Pacific/Wallis',
+'UTC'
+]
+for(i=0;i<my_timezones.length;i++){
+addOption(document.f1.tz,my_timezones[i],my_timezones[i])
+}
+function addOption(selectbox,text,value){
+var optn=document.createElement("OPTION")
+optn.text=text
+optn.value=value
+selectbox.options.add(optn)
+}
+</script>
+                    </div></div>
+                </div>
+                    <script>// Make the DIV element draggable:
+                        dragElement(document.getElementById("mydiv"));
+                        
+                        function dragElement(elmnt) {
+                          var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                          if (document.getElementById(elmnt.id + "header")) {
+                            // if present, the header is where you move the DIV from:
+                            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                          } else {
+                            // otherwise, move the DIV from anywhere inside the DIV:
+                            elmnt.onmousedown = dragMouseDown;
+                          }
+                        
+                          function dragMouseDown(e) {
+                            e = e || window.event;
+                            e.preventDefault();
+                            // get the mouse cursor position at startup:
+                            pos3 = e.clientX;
+                            pos4 = e.clientY;
+                            document.onmouseup = closeDragElement;
+                            // call a function whenever the cursor moves:
+                            document.onmousemove = elementDrag;
+                          }
+                        
+                          function elementDrag(e) {
+                            e = e || window.event;
+                            e.preventDefault();
+                            // calculate the new cursor position:
+                            pos1 = pos3 - e.clientX;
+                            pos2 = pos4 - e.clientY;
+                            pos3 = e.clientX;
+                            pos4 = e.clientY;
+                            // set the element's new position:
+                            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                          }
+                        
+                          function closeDragElement() {
+                            // stop moving when mouse button is released:
+                            document.onmouseup = null;
+                            document.onmousemove = null;
+                          }
+                        }</script>
+
+                        <script>// Make the DIV element draggable:
+                            dragElement(document.getElementById("mydivMAP"));
+                            
+                            function dragElement(elmnt) {
+                              var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                              if (document.getElementById(elmnt.id + "header")) {
+                                // if present, the header is where you move the DIV from:
+                                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                              } else {
+                                // otherwise, move the DIV from anywhere inside the DIV:
+                                elmnt.onmousedown = dragMouseDown;
+                              }
+                            
+                              function dragMouseDown(e) {
+                                e = e || window.event;
+                                e.preventDefault();
+                                // get the mouse cursor position at startup:
+                                pos3 = e.clientX;
+                                pos4 = e.clientY;
+                                document.onmouseup = closeDragElement;
+                                // call a function whenever the cursor moves:
+                                document.onmousemove = elementDrag;
+                              }
+                            
+                              function elementDrag(e) {
+                                e = e || window.event;
+                                e.preventDefault();
+                                // calculate the new cursor position:
+                                pos1 = pos3 - e.clientX;
+                                pos2 = pos4 - e.clientY;
+                                pos3 = e.clientX;
+                                pos4 = e.clientY;
+                                // set the element's new position:
+                                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                              }
+                            
+                              function closeDragElement() {
+                                // stop moving when mouse button is released:
+                                document.onmouseup = null;
+                                document.onmousemove = null;
+                              }
+                            }</script>
+                        <script>// Make the DIV element draggable:
+                            dragElement(document.getElementById("mydiv2"));
+                            
+                            function dragElement(elmnt) {
+                              var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                              if (document.getElementById(elmnt.id + "header")) {
+                                // if present, the header is where you move the DIV from:
+                                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                              } else {
+                                // otherwise, move the DIV from anywhere inside the DIV:
+                                elmnt.onmousedown = dragMouseDown;
+                              }
+                            
+                              function dragMouseDown(e) {
+                                e = e || window.event;
+                                e.preventDefault();
+                                // get the mouse cursor position at startup:
+                                pos3 = e.clientX;
+                                pos4 = e.clientY;
+                                document.onmouseup = closeDragElement;
+                                // call a function whenever the cursor moves:
+                                document.onmousemove = elementDrag;
+                              }
+                            
+                              function elementDrag(e) {
+                                e = e || window.event;
+                                e.preventDefault();
+                                // calculate the new cursor position:
+                                pos1 = pos3 - e.clientX;
+                                pos2 = pos4 - e.clientY;
+                                pos3 = e.clientX;
+                                pos4 = e.clientY;
+                                // set the element's new position:
+                                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                              }
+                            
+                              function closeDragElement() {
+                                // stop moving when mouse button is released:
+                                document.onmouseup = null;
+                                document.onmousemove = null;
+                              }
+                            }</script>
+                            </script>
+                            <script>// Make the DIV element draggable:
+                                dragElement(document.getElementById("mydiv3"));
+                                
+                                function dragElement(elmnt) {
+                                  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                                  if (document.getElementById(elmnt.id + "header")) {
+                                    // if present, the header is where you move the DIV from:
+                                    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                                  } else {
+                                    // otherwise, move the DIV from anywhere inside the DIV:
+                                    elmnt.onmousedown = dragMouseDown;
+                                  }
+                                
+                                  function dragMouseDown(e) {
+                                    e = e || window.event;
+                                    e.preventDefault();
+                                    // get the mouse cursor position at startup:
+                                    pos3 = e.clientX;
+                                    pos4 = e.clientY;
+                                    document.onmouseup = closeDragElement;
+                                    // call a function whenever the cursor moves:
+                                    document.onmousemove = elementDrag;
+                                  }
+                                
+                                  function elementDrag(e) {
+                                    e = e || window.event;
+                                    e.preventDefault();
+                                    // calculate the new cursor position:
+                                    pos1 = pos3 - e.clientX;
+                                    pos2 = pos4 - e.clientY;
+                                    pos3 = e.clientX;
+                                    pos4 = e.clientY;
+                                    // set the element's new position:
+                                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                                  }
+                                
+                                  function closeDragElement() {
+                                    // stop moving when mouse button is released:
+                                    document.onmouseup = null;
+                                    document.onmousemove = null;
+                                  }
+                                }</script>
+                                </script>
+                                <script>// Make the DIV element draggable:
+                                    dragElement(document.getElementById("mydiv4"));
+                                    
+                                    function dragElement(elmnt) {
+                                      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                                      if (document.getElementById(elmnt.id + "header")) {
+                                        // if present, the header is where you move the DIV from:
+                                        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                                      } else {
+                                        // otherwise, move the DIV from anywhere inside the DIV:
+                                        elmnt.onmousedown = dragMouseDown;
+                                      }
+                                    
+                                      function dragMouseDown(e) {
+                                        e = e || window.event;
+                                        e.preventDefault();
+                                        // get the mouse cursor position at startup:
+                                        pos3 = e.clientX;
+                                        pos4 = e.clientY;
+                                        document.onmouseup = closeDragElement;
+                                        // call a function whenever the cursor moves:
+                                        document.onmousemove = elementDrag;
+                                      }
+                                    
+                                      function elementDrag(e) {
+                                        e = e || window.event;
+                                        e.preventDefault();
+                                        // calculate the new cursor position:
+                                        pos1 = pos3 - e.clientX;
+                                        pos2 = pos4 - e.clientY;
+                                        pos3 = e.clientX;
+                                        pos4 = e.clientY;
+                                        // set the element's new position:
+                                        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                                        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                                      }
+                                    
+                                      function closeDragElement() {
+                                        // stop moving when mouse button is released:
+                                        document.onmouseup = null;
+                                        document.onmousemove = null;
+                                      }
+                                    }</script>
+                                    <script>// Make the DIV element draggable:
+                                        dragElement(document.getElementById("mydiv5"));
+                                        
+                                        function dragElement(elmnt) {
+                                          var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                                          if (document.getElementById(elmnt.id + "header")) {
+                                            // if present, the header is where you move the DIV from:
+                                            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                                          } else {
+                                            // otherwise, move the DIV from anywhere inside the DIV:
+                                            elmnt.onmousedown = dragMouseDown;
+                                          }
+                                        
+                                          function dragMouseDown(e) {
+                                            e = e || window.event;
+                                            e.preventDefault();
+                                            // get the mouse cursor position at startup:
+                                            pos3 = e.clientX;
+                                            pos4 = e.clientY;
+                                            document.onmouseup = closeDragElement;
+                                            // call a function whenever the cursor moves:
+                                            document.onmousemove = elementDrag;
+                                          }
+                                        
+                                          function elementDrag(e) {
+                                            e = e || window.event;
+                                            e.preventDefault();
+                                            // calculate the new cursor position:
+                                            pos1 = pos3 - e.clientX;
+                                            pos2 = pos4 - e.clientY;
+                                            pos3 = e.clientX;
+                                            pos4 = e.clientY;
+                                            // set the element's new position:
+                                            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                                            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                                          }
+                                        
+                                          function closeDragElement() {
+                                            // stop moving when mouse button is released:
+                                            document.onmouseup = null;
+                                            document.onmousemove = null;
+                                          }
+                                        }</script>
+                                        <script>// Make the DIV element draggable:
+                                            dragElement(document.getElementById("mydiv6"));
+                                            
+                                            function dragElement(elmnt) {
+                                              var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                                              if (document.getElementById(elmnt.id + "header")) {
+                                                // if present, the header is where you move the DIV from:
+                                                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+                                              } else {
+                                                // otherwise, move the DIV from anywhere inside the DIV:
+                                                elmnt.onmousedown = dragMouseDown;
+                                              }
+                                            
+                                              function dragMouseDown(e) {
+                                                e = e || window.event;
+                                                e.preventDefault();
+                                                // get the mouse cursor position at startup:
+                                                pos3 = e.clientX;
+                                                pos4 = e.clientY;
+                                                document.onmouseup = closeDragElement;
+                                                // call a function whenever the cursor moves:
+                                                document.onmousemove = elementDrag;
+                                              }
+                                            
+                                              function elementDrag(e) {
+                                                e = e || window.event;
+                                                e.preventDefault();
+                                                // calculate the new cursor position:
+                                                pos1 = pos3 - e.clientX;
+                                                pos2 = pos4 - e.clientY;
+                                                pos3 = e.clientX;
+                                                pos4 = e.clientY;
+                                                // set the element's new position:
+                                                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                                                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                                              }
+                                            
+                                              function closeDragElement() {
+                                                // stop moving when mouse button is released:
+                                                document.onmouseup = null;
+                                                document.onmousemove = null;
+                                              }
+                                            }</script>
+                    <!-- TradingView Widget END -->
+
+                </div>
+            </div>
+            <div>
+                <p class="px-6 font-bold text-gray-600">Made By: <a
+                        href="https://github.com/EpitechPromo2024/B-DEV-500-NCE-5-1-dashboard-robert.harakaly"
+                        target="_blank">Hugo Suzanne & Robert Harakaly</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /*Toggle dropdown list*/
+        function toggleDD(myDropMenu) {
+            document.getElementById(myDropMenu).classList.toggle("invisible");
+        }
+        /*Filter dropdown options*/
+        function filterDD(myDropMenu, myDropMenuSearch) {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById(myDropMenuSearch);
+            filter = input.value.toUpperCase();
+            div = document.getElementById(myDropMenu);
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.drop-button') && !event.target.matches('.drop-search')) {
+                var dropdowns = document.getElementsByClassName("dropdownlist");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('invisible')) {
+                        openDropdown.classList.add('invisible');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

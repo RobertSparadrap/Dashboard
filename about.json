@@ -1,0 +1,53 @@
+{
+    "client": {
+        "host": "10.101.53.35"
+    },
+    "server" : {
+        "current_time": 1531680780,
+        "services" : [{
+            "name": "weather",
+            "widgets" : [{
+                "name": "city_temperature",
+                "description": "Display temperature for a city",
+                "params": [{
+                    "name": "city",
+                    "type": "string"
+                }]
+            }]
+        }, {
+            "name": "map",
+            "widgets" : [{
+                "name": "google_map",
+                "description": "Display adress on google map",
+                "params": [{
+                    "name": "link",
+                    "type": "string"
+                }]
+            }]
+        }, {
+            "name": "Stock_exchange",
+            "widgets": [{
+                "name": "Stock",
+                "description": "Display stock exchange"
+            }]
+        }, {
+            "name": "Crypto",
+            "widgets": [{
+                "name": "Crypto",
+                "description": "Display crypto currency"
+            }]
+        }, {
+            "name": "Time",
+            "widgets": [{
+                "name": "Time",
+                "description": "Display Time"
+            }]
+        }, {
+            "name": "Calendar",
+            "widgets": [{
+                "name": "Calendar",
+                "description": "Display Calendar"
+            }]
+        }]
+    }
+}
